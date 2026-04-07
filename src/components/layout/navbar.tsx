@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import {NavbarCollections} from '@/components/layout/navbar/navbar-collections';
+import {NavbarCollectionsMobile} from '@/components/layout/navbar/navbar-collections-mobile';
+import {MobileMenu} from '@/components/layout/navbar/mobile-menu';
 import {NavbarCart} from '@/components/layout/navbar/navbar-cart';
 import {NavbarUser} from '@/components/layout/navbar/navbar-user';
 import {ThemeSwitcher} from '@/components/layout/navbar/theme-switcher';
@@ -8,7 +10,7 @@ import {Suspense} from "react";
 import {SearchInput} from '@/components/layout/search-input';
 import {SearchInputSkeleton} from '@/components/shared/skeletons/search-input-skeleton';
 import { Button } from "../ui/button";
-import { ShieldCheck } from "lucide-react";
+import { Phone, ShieldCheck } from "lucide-react";
 
 export function Navbar() {
     return (
@@ -16,8 +18,13 @@ export function Navbar() {
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center gap-8">
+                        <Suspense>
+                            <MobileMenu>
+                                <NavbarCollectionsMobile />
+                            </MobileMenu>
+                        </Suspense>
                         <Link href="/" className="text-xl font-bold">
-                            <Image src="https://mmcb.b-cdn.net/media/attachments/6/f/4/3/bcda60aa7acc40fcef96753cc34858982422a775dc82a69047d664825194/logo-implant.png" alt="Implant Labs" width={200} height={100} className="h-10 w-auto dark:invert" />
+                            <Image src="https://mmcb.b-cdn.net/media/attachments/d/1/0/2/566d85f3e0059f4dd6e66a20e5336047fc3f69e391cb0c50ee05d483d7a9/logo.avif" alt="Claro Laboratorio" width={200} height={100} className="h-10 w-auto dark:invert" />
                         </Link>
                         <nav className="hidden md:flex items-center gap-6">
                             <Suspense>
@@ -31,9 +38,9 @@ export function Navbar() {
                                 <SearchInput/>
                             </Suspense>
                         </div>
-                        <a href="/page/validar-autenticidad" className="bg-black px-4 py-1 rounded-md text-white items-center flex">
-                            <ShieldCheck size={14} className="mr-2"/>
-                            Validar autenticidad
+                        <a href="/page/validar-autenticidad" className="hidden md:flex bg-sky-500 px-4 py-1 dark:bg-sky-900 rounded-md text-white items-center">
+                            <Phone size={14} className="mr-2"/>
+                            Contactanos
                         </a>
                         <ThemeSwitcher />
                     </div>
