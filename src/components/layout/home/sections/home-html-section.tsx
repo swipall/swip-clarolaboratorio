@@ -12,7 +12,7 @@ export function HomeHtmlSection({ post }: HomeHtmlSectionProps) {
     return (
         <section className="py-8">
             <div
-                className="container mx-auto px-4 prose prose-neutral max-w-none"
+                className="container-xl mx-auto prose prose-neutral max-w-none "
                 dangerouslySetInnerHTML={{ __html: post.body }}
             />
         </section>

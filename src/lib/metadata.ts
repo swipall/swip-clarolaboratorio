@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
-export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'Implant Labs';
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://swipall.io';
+export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'Claro Laboratorio';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.clarolaboratorio.com.mx/';
 
 /**
  * Truncate text to a maximum length, preserving word boundaries.
